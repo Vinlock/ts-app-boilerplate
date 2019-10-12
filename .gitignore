@@ -1,0 +1,8 @@
+# Webstorm
+.idea
+
+# JS
+node_modules
+
+# Dist
+dist

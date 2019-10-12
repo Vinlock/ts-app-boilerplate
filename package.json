@@ -1,0 +1,51 @@
+{
+  "name": "bot-layer",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": {
+    "url": "https://github.com/Vinlock/bottable-bot-layer"
+  },
+  "contributors": [
+    "Dak Washbrook <vinlockz@gmail.com>"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json",
+    "build": "tsc",
+    "start": "node --inspect=$NODEMON_DEBUG_PORT -r ts-node/register app/server.ts",
+    "test": "jest",
+    "test:file": "node -r ts-node/register app/test.ts"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src",
+      "tslint.json",
+      "tsconfig.json",
+      "package.json"
+    ],
+    "exec": "yarn start",
+    "ext": "ts"
+  },
+  "dependencies": {
+    "pako": "^1.0.10",
+    "ws": "^7.1.2",
+    "zlib-sync": "^0.1.5",
+    "zucc": "^0.1.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/pako": "^1.0.1",
+    "@types/ws": "^6.0.3",
+    "jest": "^24.9.0",
+    "jest-websocket-mock": "^1.5.0",
+    "mock-socket": "^9.0.2",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1"
+  }
+}

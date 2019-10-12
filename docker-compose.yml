@@ -1,0 +1,28 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./.dev/Dockerfile
+    volumes:
+      - .:/var/app/
+    ports:
+      - 56745:56745
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    environment:
+      APP_DEBUG_MODE: "true"
+      APP_MONGO_DB_URL: mongodb://mongo:27017/dev
+      APP_MONGO_DATABASE: dev
+      NODEMON_DEBUG_PORT: 56745
+  mongo:
+    image: mongo:latest
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - 5001:27017
+
+volumes:
+  mongo-data:
