@@ -24,7 +24,7 @@
       "node_modules"
     ],
     "watch": [
-      "src",
+      "app",
       "tslint.json",
       "tsconfig.json",
       "package.json"
@@ -32,16 +32,9 @@
     "exec": "yarn start",
     "ext": "ts"
   },
-  "dependencies": {
-    "pako": "^1.0.10",
-    "ws": "^7.1.2",
-    "zlib-sync": "^0.1.5",
-    "zucc": "^0.1.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.18",
-    "@types/pako": "^1.0.1",
-    "@types/ws": "^6.0.3",
     "jest": "^24.9.0",
     "jest-websocket-mock": "^1.5.0",
     "mock-socket": "^9.0.2",
